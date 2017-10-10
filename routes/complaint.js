@@ -7,6 +7,7 @@ const ComplaintCtrl = require("../controllers/complaint");
 
 router.route("/")
 	.post(ComplaintCtrl.create)
-	.get();
-
+	.get(function(req, res) {
+    	res.json({ message: 'só de teste' });
+	});
 module.exports = router;

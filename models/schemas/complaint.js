@@ -1,8 +1,10 @@
 "use strict";
 
+//const Promise = require("bluebird");
 const mongo = require("mongoose");
 const Schema = mongo.Schema;
 
+//mongo.Promise = Promise;
 
 const ComplaintSchema = new Schema({
 	titulo: {

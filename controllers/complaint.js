@@ -7,9 +7,7 @@ module.exports = {
 		const data = req.body;
 
 		ComplaintModel.create(data)
-			.then(complaint => {
-                res.status(CREATED_STATUS_CODE).send("Criado com sucesso");
-            })
+			.then(complaint => res.json(complaint))
 			.catch(err => next(err));
 	}
 };
