@@ -26,4 +26,5 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use("/api/complaint", routes.complaint);
 
 http.listen(port);
+
 console.log("Port: "+port);

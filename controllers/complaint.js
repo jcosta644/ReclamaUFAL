@@ -9,5 +9,30 @@ module.exports = {
 		ComplaintModel.create(data)
 			.then(complaint => res.json(complaint))
 			.catch(err => next(err));
+	},
+	getAll(req, res, next) {
+
+		ComplaintModel.getAll()
+			.then(result => res.json(result))
+			.catch(err => next(err));
+	},
+	getByCategory(req, res, next) {
+		const category =  req.params.category;
+
+		ComplaintModel.getByCategory(category)
+			.then(result => res.json(result))
+			.catch(err => next(err));
+	},
+	getSolved(req, res, next) {
+
+		ComplaintModel.getSolved()
+			.then(result => res.json(result))
+			.catch(err => next(err));
+	},
+	getUnsolved(req, res, next) {
+
+		ComplaintModel.getUnsolved()
+			.then(result => res.json(result))
+			.catch(err => next(err));
 	}
 };

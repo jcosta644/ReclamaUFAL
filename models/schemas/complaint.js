@@ -1,8 +1,8 @@
 "use strict";
 
 //const Promise = require("bluebird");
-const mongo = require("mongoose");
-const Schema = mongo.Schema;
+const mongoose = require("mongoose");
+const Schema = mongoose.Schema;
 
 //mongo.Promise = Promise;
 
@@ -23,10 +23,28 @@ const ComplaintSchema = new Schema({
 		type: String
 	},
 	prioridade: {
-		type: Number
+		type: Number,
+		default: 0
 	},
 	ranking: {
-		type: Number
+		type: Number,
+		default: 0
+	},
+	votos: {
+		type: Number,
+		default: 0
+	},
+	resolvida: {
+		type: Boolean,
+		default: false
+
+	},
+	dataCriada: {
+		type: Date,
+		default: Date.now
+	},
+	dataResolvida: {
+		type: Date
 	}
 
 });
