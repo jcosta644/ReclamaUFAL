@@ -36,7 +36,33 @@ ComplaintSchema.statics = {
 		};
 		let mod = {};
 
-		mod.$addToSet = {resolvida : true};
+		mod = {resolvida : true};
+
+		return ComplaintModel.findOneAndUpdate(query, mod, options);
+	},
+	updatePriority(id, priority) {
+		const options = {
+			new: true
+		};
+		const query = {
+			_id: id
+		};
+		let mod = {};
+
+		mod = {prioridade : priority};
+
+		return ComplaintModel.findOneAndUpdate(query, mod, options);
+	},
+	updateVote(id) {
+		const options = {
+			new: true
+		};
+		const query = {
+			_id: id
+		};
+		let mod = {};
+
+		mod = {$inc : {votos: 1}};
 
 		return ComplaintModel.findOneAndUpdate(query, mod, options);
 	}

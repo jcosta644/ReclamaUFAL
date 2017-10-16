@@ -16,5 +16,9 @@ router.route("/find/:category")
 	.get(ComplaintCtrl.getByCategory);
 router.route("/update/:id")
 	.get(ComplaintCtrl.updateToSolved);
+router.route("/update/:id/vote")
+	.get(ComplaintCtrl.updateVote);
+router.route("/update/:id/:priority")
+	.get(ComplaintCtrl.updatePriority);
 
 module.exports = router;

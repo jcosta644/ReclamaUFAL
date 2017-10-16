@@ -42,5 +42,21 @@ module.exports = {
 			.then(result => res.json(result))
 			.catch(err => next(err));
 
+	},
+	updatePriority(req, res, next) {
+		const idComplaint = req.params.id;
+		const priority = req.params.priority;
+
+		ComplaintModel.updatePriority(idComplaint, priority)
+			.then(result => res.json(result))
+			.catch(err => next(err));
+	},
+	updateVote(req, res, next) {
+		const idComplaint = req.params.id;
+
+		ComplaintModel.updateVote(idComplaint)
+			.then(result => res.json(result))
+			.catch(err => next(err));
+
 	}
 };
