@@ -12,7 +12,9 @@ router.route("/solved")
 	.get(ComplaintCtrl.getSolved);
 router.route("/unsolved")
 	.get(ComplaintCtrl.getUnsolved);
-router.route("/:category")
+router.route("/find/:category")
 	.get(ComplaintCtrl.getByCategory);
+router.route("/update/:id")
+	.get(ComplaintCtrl.updateToSolved);
 
 module.exports = router;

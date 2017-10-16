@@ -34,5 +34,13 @@ module.exports = {
 		ComplaintModel.getUnsolved()
 			.then(result => res.json(result))
 			.catch(err => next(err));
+	},
+	updateToSolved(req, res, next) {
+		const idComplaint = req.params.id;
+
+		ComplaintModel.updateToSolved(idComplaint)
+			.then(result => res.json(result))
+			.catch(err => next(err));
+
 	}
 };

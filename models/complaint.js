@@ -26,6 +26,19 @@ ComplaintSchema.statics = {
 	},
 	getUnsolved() {
 		return ComplaintModel.find({"resolvida": false});
+	},
+	updateToSolved(id) {
+		const options = {
+			new: true
+		};
+		const query = {
+			_id: id
+		};
+		let mod = {};
+
+		mod.$addToSet = {resolvida : true};
+
+		return ComplaintModel.findOneAndUpdate(query, mod, options);
 	}
 
 };
