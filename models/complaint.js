@@ -18,6 +18,16 @@ ComplaintSchema.statics = {
 
 		return result.find();
 	},
+	getAllSorted() {
+		let result = ComplaintModel;
+
+		return result.find().sort({"prioridade": -1, "votos": -1});
+	},
+	getToVote() {
+		let result = ComplaintModel;
+
+		return result.find().sort({"dataCriada": -1}).limit(5);
+	},
 	getByCategory(category) {
 		return ComplaintModel.find({"categoria": category});
 	},

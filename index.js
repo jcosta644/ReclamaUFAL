@@ -24,6 +24,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use("/api/complaint", routes.complaint);
+app.use("/api/user", routes.user);
 
 http.listen(port);
 

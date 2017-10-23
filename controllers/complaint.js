@@ -16,6 +16,18 @@ module.exports = {
 			.then(result => res.json(result))
 			.catch(err => next(err));
 	},
+	getAllSorted(req, res, next) {
+
+		ComplaintModel.getAllSorted()
+			.then(result => res.json(result))
+			.catch(err => next(err));
+	},
+	getToVote(req, res, next) {
+
+		ComplaintModel.getToVote()
+			.then(result => res.json(result))
+			.catch(err => next(err));
+	},
 	getByCategory(req, res, next) {
 		const category =  req.params.category;
 

@@ -20,7 +20,8 @@ const ComplaintSchema = new Schema({
 		type: String
 	},
 	autor: {
-		type: String
+		type: Schema.Types.ObjectId,
+		ref: "User"
 	},
 	prioridade: {
 		type: Number,

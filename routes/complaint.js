@@ -8,6 +8,10 @@ const ComplaintCtrl = require("../controllers/complaint");
 router.route("/")
 	.post(ComplaintCtrl.create)
 	.get(ComplaintCtrl.getAll);
+router.route("/sorted")
+	.get(ComplaintCtrl.getAllSorted);
+router.route("/vote")
+	.get(ComplaintCtrl.getToVote);
 router.route("/solved")
 	.get(ComplaintCtrl.getSolved);
 router.route("/unsolved")
